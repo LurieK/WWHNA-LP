@@ -1,0 +1,597 @@
+
+/*
+Theme Name: WWHNA-LP
+Author: Lurie Kimmerle
+Description: Theme designed and built for Jasmin Mittag
+Version: 1.0
+License: Proprietary
+Text Domain: wwhna-lp
+*/
+
+@import './styles/about.css';
+@import './styles/artist.css';
+@import './styles/cards.css';
+@import './styles/contact.css';
+@import './styles/donate.css';
+@import './styles/header.css';
+@import './styles/hero.css';
+
+
+
+@font-face {
+    font-family: "Philly Sans";
+    src: url("./philly_sans.woff");
+
+}
+
+html {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*for fade in animation*/
+.about-heading,
+h4,
+h3,
+.card-examples,
+.Jasmin,
+.artist-text,
+.donate-text {
+    opacity: 0;
+    transition: opacity 1s, transform 1s;
+    transform: translateY(30px);
+    /* slide down by 30px initially; adjust as needed */
+}
+
+
+h2 {
+
+    font-style: italic;
+    text-align: center;
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.66);
+}
+
+h3 {
+    align-self: center;
+    font-family: 'Hind', sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+h4 {
+
+    font-family: 'Courier Prime', monospace;
+    margin-right: 10%;
+    margin-left: 10%;
+    font-size: 20px;
+}
+
+h5 {
+    font-family: 'Courier Prime', monospace;
+    font-size: 1rem;
+}
+
+
+
+/*Woman image and bubble styling*/
+.body{
+    width: 90%;
+}
+
+
+/* Card examples  */
+
+.about {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    width: 100%;
+
+}
+
+
+
+.about-heading {
+    font-family: "Philly Sans";
+    font-size: 4rem;
+    padding-bottom: 20px;
+
+}
+
+.about-text {
+    background-color: #d7e4f9;
+    align-self: center;
+    padding: 10px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 40px;
+    box-shadow: 10px 8px black;
+    width: 80%
+}
+
+
+@media screen and (min-width: 1550px) {
+    .card-section {
+        width: 60%;
+    }
+}
+
+.card-section::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    border: 15px solid white;
+    border-radius: 30px;
+}
+
+
+.card-section {
+    background-color: #df9ac1; /* This will be a default or dynamically changed */
+    /* width: 60%;
+    align-self: center;
+    display: flex;
+    flex-flow: column;
+    margin-top: 30px;
+    z-index: 2;
+    justify-content: center; */
+
+}
+
+.cards .card-section{
+    width: 60%;
+    align-self: center;
+    display: flex;
+    flex-flow: column;
+    margin-top: 30px;
+    z-index: 2;
+    justify-content: center;
+    border: 10px solid white;
+    position: relative;
+}
+
+.card-examples {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+}
+
+.card {
+    z-index: 2;
+    perspective: 1500px;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin: 0 20px 20px 0;
+    display: inline-block;
+}
+
+.cards {
+    background-image: url(./images/Riptide\ Thriller\ Ebook\ Cover.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 50% 50%;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+
+@media screen and (min-width: 1550px) {
+
+    .cards {
+        width: 60%;
+    }
+}
+
+.cards::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    border: 15px solid white;
+    border-radius: 30px;
+}
+
+
+
+
+.card-1,
+.card-2{
+    z-index: 2;
+    perspective: 1500px;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin: 0 20px 20px 0;
+    /* Added margin for spacing between cards */
+    display: inline-block;
+}
+
+
+.card-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.7s;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+
+.card-face img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 850px) {
+    .about-heading {
+        font-size: 3rem;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-left: 10%;
+        margin-right: 10%;
+
+    }
+
+    .card-examples {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    .cards h3 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (min-width: 350px) {
+    .card-face img {
+        width: 75%;
+        object-fit: contain;
+    }
+
+    .card-face {
+        display: flex;
+        justify-content: center;
+    }
+
+    .card-1,
+    .card-2 {
+        margin: 0;
+    }
+}
+}
+
+.cards h3 {
+    background-color: white;
+    padding: 10px;
+    box-shadow: 10px 8px black;
+}
+
+
+
+.artist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin-top: 60px;
+    padding: 3rem;
+    background-color: #b90d0d;
+    box-shadow: 10px 8px black;
+}
+
+.artist-text h1 {
+    color: #FFD52D;
+    text-shadow: 10px 8px black;
+    font-size: 60px;
+}
+
+.artist-text {
+    width: 50%;
+    color: white;
+}
+
+.Jasmin-mobile {
+    display: none;
+}
+
+.Jasmin {
+    width: 40%;
+    margin-left: 20px;
+    box-shadow: 10px 8px black;
+}
+
+@media only screen and (max-width: 850px) {
+
+    .artist-text {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+    }
+
+    .Jasmin-mobile {
+        display: flex;
+        align-self: center;
+        width: 50%;
+        box-shadow: 10px 8px black;
+    }
+
+    .Jasmin {
+        display: none;
+
+    }
+
+    .artist-text h4 {
+        width: 100%;
+        align-self: center;
+    }
+
+}
+
+
+.donate {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-image: url(./images/Riptide\ Thriller\ Ebook\ Cover.png);
+    background-size: cover;
+    background-position: bottom;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.donate-text {
+    background-color: white;
+    box-shadow: 10px 8px black;
+    width: 75%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.donate-text {
+    text-align: center;
+}
+
+.donate-text a{
+    color: black;
+    text-decoration: none;
+}
+
+.donate-text a:after{
+    color: black;
+}
+
+.donate-btn {
+    background-color: #df9ac1;
+    width: 20%;
+    margin-bottom: 30px;
+    align-self: center;
+    padding: 10px;
+    border: 5px solid white;
+    border-radius: 0;
+    padding: 20px;
+    font-family: "Philly Sans";
+    font-size: 20px;
+    box-shadow: 10px 8px black;
+
+}
+
+
+
+@media only screen and (max-width: 850px) {
+
+    .donate-text h3 {
+        font-size: 2rem;
+        text-align: center;
+        
+    }
+
+    .donate-btn {
+        padding: 10px;
+        box-shadow: 8px 6px black;
+        width:40%;
+
+    }
+}
+
+.footer{
+    background-color:#b90d0d;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    box-shadow: 10px 8px black;
+    margin-top: 20px;
+
+}
+
+.footer h1{
+    color: white;
+    text-shadow: 4px 4px black;
+}
+
+.contact-info p a{
+    color: white;
+    text-decoration: none;
+}
+
+.contact-info a:after{
+    color: white;
+}
+
+.social-icon{
+   margin-left: 10px;
+   margin-right: 10px;
+   width: 40px;
+}
+
+.contact-info a{
+    color: #b90d0d;
+}
+
+.contact-info p{
+    font-family: 'Hind', sans-serif;
+    font-size: 20px;
+    color: white
+}
+
+.footer .contact-info p a:after{
+    color: black;
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row;
+
+    font-size: 16px;
+    font-family: 'Hind', sans-serif;
+    color: white;
+}
+
+/* responsive tablet styling just for WP theme */
+@media only screen and (max-width: 930px) {
+   .header {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+   }
+
+   .header h3{
+        font-size: 3rem;
+   }
+
+   .menu {
+        display: none;
+   }
+
+    .bubble-text h5{
+        font-size: 75%;
+    }
+
+    .copyright {
+        display: flex;
+        line-height: .25px;
+        font-size: 10px;
+        justify-content: center;
+        flex-flow: column;
+    }
+
+
+
+}
+
+/*responsive mobile for WP Theme*/
+
+@media only screen and (max-width: 350px){
+    .menu{
+        display: none;
+    }
+    .header h3{
+        font-size: 2rem;
+        margin-left: 0;
+    }
+
+    .header{
+        text-align: center;
+    }
+
+   
+
+    .about-text{
+        width: 60%;
+    }
+    .about-heading{
+        font-size: 2.5rem;
+    }
+    .about-text h4 {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 16px;  
+    }
+
+    .cards .card-section {
+        width: 70%;
+    }
+
+    .cards h3{
+        font-size: 150%;
+        margin-bottom: 0;
+    }
+
+     .cards .card-face img {
+        width: 60%;
+        object-fit: contain;
+    }
+
+    .cards .card-face {
+        display: flex;
+        justify-content: center;
+    }
+
+    .cards .card-1,
+    .cards .card-2 {
+        margin: 0;
+    }
+
+    .artist{
+        padding: 1rem;
+        width: 70%;
+    }
+
+    .artist h1 {
+        font-size: 50px;
+    }
+
+    .Jasmin-mobile{
+        width: 70%
+    }
+
+    .artist-text h4{
+        font-size: 16px;
+    }
+
+    .donate-text{
+        width: 85%;
+    }
+
+    .donate-text{
+        width: 85%;
+        font-size:40px;
+    }
+    
+}
+
